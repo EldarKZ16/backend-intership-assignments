@@ -54,11 +54,13 @@ object Boot extends App {
 
 
   // Task 3
+  val yearOfBirth = 1990
+  val numbOfFilms = 3
   val directorWithFilmsAndYearList = (year: Int, numberOfFilms: Int) => {
     directors.filter(director => director.yearOfBirth < year && director.films.size > numberOfFilms)
   }
-  val directorWithFilmsAndYearString = directorWithFilmsAndYearList(year, numberOfFilms).map(director => s"${director.firstName} ${director.lastName}").mkString(", ")
-  println(s"Task 3: Directors who were born before $year who have also directed more than than $numberOfFilms films : $directorWithFilmsAndYearString\n")
+  val directorWithFilmsAndYearString = directorWithFilmsAndYearList(yearOfBirth, numbOfFilms).map(director => s"${director.firstName} ${director.lastName}").mkString(", ")
+  println(s"Task 3: Directors who were born before $yearOfBirth who have also directed more than than $numbOfFilms films : $directorWithFilmsAndYearString\n")
 
   // Task 4
   val ascending = false
@@ -107,11 +109,5 @@ object Boot extends App {
   // Task 11
   val directorsEarliestFilm = directorsListOfFilms.minBy(film => film.yearOfRelease)
   println(s"Task 11: From the Archives.\nThe earlist film is ${directorsEarliestFilm.name} released in ${directorsEarliestFilm.yearOfRelease}.")
+
 }
-
-
-
-
-
-
-
