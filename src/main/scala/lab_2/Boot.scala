@@ -80,7 +80,7 @@ object Boot extends App {
   println(s"Task 5: The names of the films directed by Christopher Nolan: $nolanFilmsString\n")
 
   // Task 6
-  val directorsFilmsList = directors.map(director => director.films).flatten.map(film => film.name)
+  val directorsFilmsList = directors.flatMap(director => director.films).map(film => film.name)
   val directorsFilmsString = directorsFilmsList.mkString(", ")
   println(s"Task 6: The names of all films by all directors: \n$directorsFilmsString\n")
 
@@ -89,7 +89,7 @@ object Boot extends App {
   println(s"Task 7: The date of the earliest McTiernan's film is ${mcTiernanVintage.yearOfRelease}\n")
 
   // DirectorsListOfFilms for tasks 8,9,11
-  val directorsListOfFilms = directors.map(director => director.films).flatten
+  val directorsListOfFilms = directors.flatMap(director => director.films)
 
   // Task 8
   val directorsFilmsIMDBList = directorsListOfFilms.sortWith(_.imdbRating > _.imdbRating)
