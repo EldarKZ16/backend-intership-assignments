@@ -6,7 +6,7 @@ object ChipShop extends App {
 
   def willServe(cat: Cat): Boolean = {
     cat match {
-      case Cat(_,_,food) if food.equals("Chips") => true
+      case Cat(_,_,food) if food == "Chips" => true
       case _ => false
     }
   }

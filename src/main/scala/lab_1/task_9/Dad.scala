@@ -6,8 +6,8 @@ object Dad extends App {
 
   def rate(film: Film):Double = {
     film match {
-      case Film(_,_,_,director) if director.name.equals("Clint Eastwood") => 10.0
-      case Film(_,_,_,director) if director.name.equals("John McTiernan") => 7.0
+      case Film(_,_,_,director) if director.name == "Clint Eastwood" => 10.0
+      case Film(_,_,_,director) if director.name == "John McTiernan" => 7.0
       case _ => 3.0
     }
   }
